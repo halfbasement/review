@@ -8,6 +8,11 @@
 - 순서가 있는 데이터 집합 / 중복 O
 - 구현 클래스 : ArrayList , LinkedList , Vector 
 
+1. ArrayList
+    - object 배열을 이용해서 데이터 순차 저장
+    - **배열에 공간이 없으면 보다 큰 배열 생성해서 복사**
+
+
 ## Set
 - 순서가 없는 데이터 집합 / 중복 X
 
