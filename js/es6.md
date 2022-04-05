@@ -2,6 +2,7 @@
 
 ## this
 
+- default
 ```js
 //최상위는 window
 
@@ -10,7 +11,11 @@
 2. function example(){
     console.log(this) //window  ( example을 담고 있는 애도 window )
 }
+```
 
+- Object
+
+```js
 3. let object= {
     name : 'kim'
     age : 20
@@ -38,7 +43,21 @@
         }
     }
 } 
+```
+- constructor
+```js
+4. 
 
+function ex(){
+    this.name = 'kim'
+}
 
+let object = new ex(); // ex { name : 'kim' }
+```
 
+- **이벤트리스너**
+```js
+$('#id').on('click',function(){
+    this; // e.currentTarget;  -> 현재 이벤트가 동작하는 곳
+})
 ```
