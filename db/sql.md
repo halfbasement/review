@@ -41,3 +41,10 @@ select name,age from member where age>=( select age from member where name ="홍
 
 
 ```
+
+- Group by ( 그룹으로 묶어줌 ) // Having -> group by 조건
+```sql
+select sum(amount * price) as '합계' from buy group by mem_id;
+
+member별로 구매한 가격
+```
