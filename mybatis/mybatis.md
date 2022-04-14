@@ -7,3 +7,5 @@ join 으로 여러 컬럼을 가져와야 한다면
 3. dto새로 생성
 
 https://devlog-wjdrbs96.tistory.com/418
+
+db커넥션 
