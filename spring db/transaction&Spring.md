@@ -19,3 +19,24 @@
 1. 서비스에서 transactionManager.getTransaction()을 호출해서 트랜잭션을 시작한다.
 2. 트랜잭션 매니저는 내부에서 dataSource를 사용해서 커넥션을 생성해서 AutoCommit(false)로 트랜잭션 동기화 매니저에게 보관한다
 3. 서비스는 비즈니스 로직을 실행하면서 repository의 메서드들을 사용한다 ( repository는 보관된 커넥션을 사용한다)
+
+
+## 트랜잭션 템플릿
+
+- 기본적으로 중복되는 commit(),.rollback()등을 한번에 관리해준다
+```java
+txTemplate.executeWithoutResult((status) -> {
+            try {
+                bizLogic(fromId, toId, money);
+            } catch (SQLException e) {
+                throw new IllegalStateException(e);
+            }
+        });
+```
+
+- 이래도 결국에 txTemplate.executeWithoutResult부분은 순수 비즈니스 로직이 아니다.
+
+
+## 트랜잭션 AOP
+ 
+- 트랜잭션 프록시를 하나 만들어줌
