@@ -40,3 +40,4 @@ txTemplate.executeWithoutResult((status) -> {
 ## 트랜잭션 AOP
  
 - 트랜잭션 프록시를 하나 만들어줌
+- @Transaction이 걸린 서비스는 getClass를 호출 할 때 CGLIB(프록시)가 걸려있다
