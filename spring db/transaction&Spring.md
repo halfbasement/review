@@ -39,5 +39,15 @@ txTemplate.executeWithoutResult((status) -> {
 
 ## 트랜잭션 AOP
  
-- 트랜잭션 프록시를 하나 만들어줌
+- 트랜잭션 **AOP프록시**를 하나 만들어줌
 - @Transaction이 걸린 서비스는 getClass를 호출 할 때 CGLIB(프록시)가 걸려있다
+
+## 스프링부트의 자동 리소스 등록
+
+- dataSource 자동등록
+1. appliocation.properties에 dataSource생성 ( url , username ,password )
+
+- 트랜잭션 매니저 자동등록
+1. 스프링 부트는 적절한 트랜잭션 매니저를 자동으로 스프링 빈에 등록한다
+
+2. 어떤 트랜잭션 매니저를 선택할지는 라이브러리를 보고 판단한다
